@@ -11,6 +11,14 @@ app.get('/', (req, res) => {
     res.send(content)
 })
 
+app.get('/no-document-cookie', () => {
+    const content = `
+        <h2>don't allow document.cookie</h2>
+    `
+    res.set('Set-Cookie', 'mycookie2=beaf;HttpOnly')
+    res.send(content)
+})
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
