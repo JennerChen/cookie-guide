@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
     res.send(content)
 })
 
-app.get('/no-document-cookie', () => {
+app.get('/no-document-cookie', (req, res) => {
     const content = `
         <h2>don't allow document.cookie</h2>
     `
