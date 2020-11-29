@@ -7,6 +7,7 @@ app.get('/', (req, res) => {
         <h2>basic set cookie</h2>
         <p>cookie demo</p>
     `
+    res.set('Set-Cookie', 'mycookie=beaf')
     res.send(content)
 })
 
