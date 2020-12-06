@@ -19,6 +19,24 @@ app.get('/no-document-cookie', (req, res) => {
     res.send(content)
 })
 
+app.get('/pathA', (req, res) => {
+    const content = `
+        <h2>set only pathA</h2>
+        <h2>you only can see scopeValue in /pathA</h2>
+    `
+    res.set('Set-Cookie', 'scopeValue=pathA;path=/pathA')
+    res.send(content)
+})
+
+app.get('/pathB', (req, res) => {
+    const content = `
+        <h2>set only pathA</h2>
+        <h2>you only can see scopeValue in /pathB</h2>
+    `
+    res.set('Set-Cookie', 'scopeValue=pathA;path=/pathB')
+    res.send(content)
+})
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
