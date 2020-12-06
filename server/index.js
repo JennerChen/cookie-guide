@@ -46,6 +46,15 @@ app.get('/set-domain-taobao', (req, res) => {
     res.send(content)
 })
 
+app.get('/ajax-cookie', (req, res) => {
+    let cookieValue = Math.random()
+    const content = `
+       you were setting cookie ajaxCookie with value ${ cookieValue }
+    `
+    res.set('Set-Cookie', `ajaxCookie=${ cookieValue }`)
+    res.send(content)
+})
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
