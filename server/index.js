@@ -37,6 +37,14 @@ app.get('/pathB', (req, res) => {
     res.send(content)
 })
 
+app.get('/set-domain-taobao', (req, res) => {
+    const content = `
+        <h2>don't allow set other domain</h2>
+        <h2>you only can set current domain</h2>
+    `
+    res.set('Set-Cookie', 'otherDomainCookie=beaf;domain=*.taobao.com')
+    res.send(content)
+})
 
 
 app.listen(port, () => {
